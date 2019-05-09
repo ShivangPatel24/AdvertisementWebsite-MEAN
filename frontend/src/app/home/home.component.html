@@ -1,0 +1,147 @@
+
+<body>
+
+<div id="toadd">
+<nav class="navbar1 navbar-default navbar-fixed-top bg1" id="nav1">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="/src/logo.png" width="200px" height="50px">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li style="border-right:1px solid white;"><a href="#about">ABOUT</a></li>
+        <li style="border-right:1px solid white;"><a href="#category">CATEGORIES</a></li>
+        <li style="border-right:1px solid white;"><a href="#achievements">ACHIEVEMENTS</a></li>
+        <li id="mka1"><a href="#contact" id="mka2">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron1 text-center" id="rm1">
+  <h1>AdFast</h1>
+  <p>Making trades easier and faster</p>
+</div>
+</div>
+
+
+
+<nav class="navbar navbar-inverse" style='margin-bottom:0;border-radius:0;border:0;padding:5px;'>
+	  <div class="col-sm-3 col-md-3" style="margin-left:540px;">
+        <form class="navbar-form" role="search" #srchForm="ngForm" *ngIf="!submitted" (ngSubmit)="searchtMyData(srchForm.value)">
+				<span class="text1">Search</span>
+        <div class="input-group" style="margin-left:8px;">
+            <input type="text" class="form-control" placeholder="All categories,items..." name="searchterm" id="searchterm" #searchterm="ngModel" style="padding-right:30px;" required ngModel>
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" [disabled]="!srchForm.valid"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+        </div>
+				<div class="navbar-right" style="margin-right:50px;"><a (click)="logout()" role="button"><span class="glyphicon glyphicon-log-out" style="font-size:30px;margin-top:12px;"></span></a><small style="font-size:17px;color:white;margin-left:10px;">Log Out {{username}}</small></div>
+</nav>
+
+
+
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid" style="text-align:center;">
+  <div class="row">
+      <h2>Learn about AdFast</h2><br>
+      <h4 class="slideanim">Our company helps you to sell your old or unused items as quickly as possible and in the best price you can get in the town.</h4><br>
+      <p class="slideanim">We concentrate on customer satisfaction on both sides of the deal. The seller gets the best amount possible and the buyer gets it as soon as he needs by our fast delivery services. You can rent, sell or buy things as per your need. We just provide you with a portal to display your ad to other users for free, so you can get a good response and we provide you with delivery of item.</p>
+    </div>
+  </div>
+
+<div class="container-fluid bg-grey" id="category">
+	<h2 style="text-align:center;">Our Cateogries</h2>
+	<div class="box1 slideanim">
+		<div style="float:left;width:50%;padding:30px 0;">
+			<h2>Mobiles</h2>
+			<p>The most trending category is the mobile phones which are sold at a very high rate.</p>
+		</div>
+		<div style="float:right;margin-right:150px;margin-top:15px;">
+			<span class="glyphicon glyphicon-phone logo" style="font-size:110px;padding:30px 0px;"></span>
+		</div>
+	</div>
+	<div class="box1 slideanim">
+		<div style="float:right;width:50%;padding:30px 0px;">
+			<h2>Real Estate</h2>
+			<p>You can sell your house or post an ad to give it on rent. Each type of real estate can be sold and even unused lands can be counted.</p>
+		</div>
+		<div style="float:left;margin-left:50px;margin-top:15px;">
+			<span class="glyphicon glyphicon-home logo" style="font-size:110px;padding:30px 0px;"></span>
+		</div>
+	</div>
+	<div class="box1 slideanim">
+		<div style="float:left;width:50%;padding:30px 0px;margin-top:15px;">
+			<h2>Vehicles</h2>
+			<p>Vehicles can be sold which are new or used and dont have any problem in them. Renting of vehicles is also a part of it.</p>
+		</div>
+		<div style="float:right;padding:30px 0px;margin-right:130px;margin-top:-15px;">
+			<i class="material-icons logo" style="font-size:130px;padding:30px 0px;">drive_eta</i>
+		</div>
+	</div>
+</div>
+
+
+<div id="achievements" class="container-fluid text-center slideanim">
+	<h2>ACHIEVEMENTS</h2>
+  <img class="mySlides slid1" src="/src/img1.jpg" width=800px height=440px>
+  <img class="mySlides slid1" src="/src/img2.jpg" width=800px height=440px>
+  <img class="mySlides slid1" src="/src/img3.jpg" width=800px height=440px>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="start" class="container-fluid text-center bg-grey" style="margin-bottom:0;">
+  <h1>Put your first deal out today</h1>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<button (click)="onClickpost()" class="bigb slideanim">Post Ad</button>
+	<br>
+	<br>
+	<h4 style="text-align:center;">Enjoy having trades at adfast and keep using our service</h4>
+</div>
+
+
+
+
+<!-- Container (Contact Section) -->
+<section id="contact" style="background-color:#7c7c7c;color:white;">
+<div class="container">
+  <h2 class="text-center" style="color:white;">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>You can meet or contact us at :</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> California, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> xyz@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</body>

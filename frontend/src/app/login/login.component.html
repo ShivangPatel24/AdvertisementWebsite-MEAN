@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div>
+<img src="/src/logo.png" align="left" width="300" height="100"/>
+
+<form [formGroup]="formdata">
+  <div class="box">
+    <h1>Login</h1>
+    <p>Please fill in this form to login account.</p>
+    <hr>
+
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" formControlName="email" required>
+
+    <label for="psw"><b>Password&nbsp;&nbsp;</b></label>
+    <i id="pass-status" class="fa fa-eye" (click)="viewPassword()"></i>
+    <input type="password" id="password-field" placeholder="Enter Password" name="password1" formControlName="password1" required>
+
+
+
+    <div class="clearfix">
+      <input type="submit" value="Login" (click)="onClickSubmit()" [disabled]="!formdata.valid">
+	  </div>
+	 <a (click)="onClicklogin()" style="font-size:12px;padding:0;margin-left:158px;color:blue;cursor: pointer;">Not registered?Sign up</a>
+  </div>
+</form>
+ </div>

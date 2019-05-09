@@ -1,0 +1,35 @@
+
+<div>
+<img src="/src/logo.png" align="left" width="300" height="100"/>
+
+<form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onClickSubmit(userForm.value)">
+  <div class="box">
+    <h1>Register</h1>
+    <p>Please fill in this form to login account.</p>
+    <hr>
+
+	<label for="nm"><b>Name</b></label>
+	<input type="text" placeholder="Full Name" name="name"  #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required ngModel>
+  <small class="text-danger" [hidden]="name.valid || name.untouched">Name is required</small><br>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email"  #email="ngModel" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" required ngModel>
+    <small class="text-danger" [hidden]="email.valid || email.untouched">Email is not Valid</small><br>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password1"  #pass1="ngModel" minLength=4 pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$" required ngModel>
+    <small class="text-danger" [hidden]="pass1.untouched||pass1.dirty">Enter Password</small><br>
+    <small class="text-danger" [hidden]="pass1.valid || pass1.untouched">Password must contain uppercase, lowercase, speical character and digits</small><br>
+
+    <label for="psw"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Enter Password again" name="password2" #pass2="ngModel" required ngModel>
+    <small class="text-danger" [hidden]="pass2.valid || pass2.untouched">Re Enter Password</small><br>
+    <small class="text-danger" [hidden]="pass2.value==pass1.value">Password Dont Match</small><br>
+
+    <div class="clearfix">
+      <input type="reset" value="Cancel">
+      <input type="submit" value="Submit" [disabled]="userForm.invalid">
+	  </div>
+  </div>
+</form>
+</div>

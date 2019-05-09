@@ -1,0 +1,160 @@
+
+<body>
+
+<div id="toadd">
+<nav class="navbar1 navbar-default navbar-fixed-top bg1" id="nav1">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="/src/logo.png" width="200px" height="50px">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+				<li style="border-right:1px solid white;"><a (click)="onClickhome()" href="#home">HOME</a></li>
+        <li style="border-right:1px solid white;"><a href="#register">FORM</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+			</ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron1 text-center" id="rm1">
+  <h1>AdFast</h1>
+  <p>Making trades easier and faster</p>
+</div>
+</div>
+
+
+
+
+<nav class="navbar navbar-inverse" style='margin-bottom:0;border-radius:0;border:0;padding:5px;'>
+	  <div class="col-sm-3 col-md-3" style="margin-left:540px;">
+        <form class="navbar-form"  role="search" #srchForm="ngForm" *ngIf="!submitted" (ngSubmit)="searchtMyData(srchForm.value)">
+				<span class="text1">Search</span>
+        <div class="input-group" style="margin-left:8px;">
+            <input type="text" class="form-control" placeholder="All categories,items..." name="searchterm" id="searchterm" #searchterm="ngModel" style="padding-right:30px;" required ngModel>
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" [disabled]="!srchForm.valid"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+				</form>
+				</div>
+		
+</nav>
+
+
+<div class="container myinput" style="color:black;" id="register">
+	<form #adForm="ngForm" *ngIf="!submitted" (ngSubmit)="postMyData(adForm.value)">
+	<h1>POST Ad</h1>
+   <p>Please fill in this form to post your ad</p>
+    <hr>
+	<div class="row">
+		<div class="col-sm-1" style="margin-top:20px;">
+			<label for="title"><b>Ad Title</b></label>
+		</div>
+		<div class="col-sm-11">
+			<input type="text" placeholder="Enter the title of your Ad" name="title"  #title="ngModel" required ngModel>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1" style="margin-top:20px;">
+			<label for="category"><b>Category</b></label>
+		</div>
+		<div class="col-sm-11">
+			<input type="text" placeholder="Category of your Ad" name="category"  #category="ngModel" required ngModel>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1" style="margin-top:20px;">
+			<label for="addesc"><b>Ad Description</b></label>
+		</div>
+		<div class="col-sm-11">
+			<textarea rows="4" cols="50" placeholder="Describe your ad" name="addesc"  #addesc="ngModel" required ngModel></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1" style="margin-top:20px;">
+			<label for="price"><b>Price</b></label>
+		</div>
+		<div class="col-sm-11">
+			<input type="number" placeholder="Enter the price" name="price"  #price="ngModel" required ngModel>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1" style="margin-top:20px;">
+			<b>Upload Photo</b>
+		</div>
+		<div class="col-sm-11">
+			<label for="fu" class="fua"><i class="material-icons logo" style="font-size:70px;padding-left:0;color:grey;">add_circle_outline</i>
+			<input type="file" placeholder="Upload photo" name="fu" id="fu" #fu="ngModel" required ngModel>
+			</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-1" style="margin-top:20px;">
+			<label for="nm"><b>Name</b></label>
+		</div>
+		<div class="col-sm-11">
+			<input type="text" placeholder="Full Name" name="name"  #name="ngModel" required ngModel>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1" style="margin-top:20px;">
+			<label for="city"><b>City</b></label>
+		</div>
+		<div class="col-sm-11">
+			<input type="text" placeholder="Enter city" name="city"  #city="ngModel" required ngModel>
+		</div>
+	</div>
+	<input type="submit" value="Submit" [disabled]="!adForm.valid">
+	</form>
+ </div>
+
+ <div id="start" class="container-fluid text-center bg-grey" style="margin-bottom:0;">
+  <h1 style="text-align:center;">Sneak a peek at all the amazing ads till now</h1>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<button (click)="onClickdisplay()" class="bigb">Display Ads</button>
+	<br>
+	<br>
+</div>
+
+<section id="contact" style="background-color:#7c7c7c;color:white;">
+<div class="container">
+  <h2 class="text-center" style="color:white;">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>You can meet or contact us at :</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> California, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> xyz@gmail.com</p>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+</body>
